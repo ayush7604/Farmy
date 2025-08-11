@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmy - Fresh from the Farm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header with Auth Dropdown -->
+  <header>
+    <h1>🌿 Farmy</h1>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#subscribe">Subscribe</a>
+      <span class="cart-icon" onclick="showCart()">🛒<span id="cart-count" class="badge">0</span></span>
+      <div class="auth-dropdown">
+        <button class="btn" onclick="toggleAuthForm()">Login/Register</button>
+        <div id="auth-form" class="auth-form hidden">
+          <input type="email" id="auth-email" placeholder="Email" required />
+          <input type="password" id="auth-password" placeholder="Password" required />
+          <button class="btn small" onclick="register()">Register</button>
+          <button class="btn small" onclick="login()">Login</button>
+          <button id="logout-btn" class="btn small" onclick="logout()" style="display:none">Logout</button>
+          <p id="auth-msg" class="success-msg"></p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Fresh. Organic. Local.</h2>
+    <p>Get farm produce delivered right to your door.</p>
+    <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+  </section>
+
+  <!-- Products -->
+  <section class="section" id="products">
+    <h3 class="section-title">Our Products</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="organic_veggie.jpeg" alt="Organic Veggies">
+        <h4>Organic Veggies</h4>
+        <p>$10 / basket</p>
+        <button class="btn" onclick="addToCart('Organic Veggies')">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="seasonal_fruites.jpg" alt="Seasonal Fruits">
+        <h4>Seasonal Fruits</h4>
+        <p>$15 / basket</p>
+        <button class="btn" onclick="addToCart('Seasonal Fruits')">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="Dairy_product.jpeg" alt="Dairy Products">
+        <h4>Dairy Products</h4>
+        <p>$20 / box</p>
+        <button class="btn" onclick="addToCart('Dairy Products')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery">
+    <h3 class="section-title">Farm Gallery</h3>
+    <div class="grid gallery">
+      <img src="farm.jpeg" alt="Farm">
+      <img src="farmer.jpeg" alt="Farmer">
+      <img src="cows.jpeg" alt="Cows">
+      <img src="organic.jpeg" alt="Organic">
+      <img src="greenhouse.jpeg" alt="Greenhouse">
+      <img src="fields.jpeg" alt="Fields">
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="section" id="subscribe">
+    <h3 class="section-title">Subscribe to Our Newsletter</h3>
+    <p class="subtitle">Get updates on offers, fresh stock, and market schedules.</p>
+    <form id="subscribeForm" class="subscribe-form">
+      <input type="email" id="emailInput" placeholder="Enter your email" required />
+      <button class="btn" type="submit">Subscribe</button>
+      <p id="responseMsg" class="success-msg"></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Farmy. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
